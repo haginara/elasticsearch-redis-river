@@ -1,6 +1,6 @@
 # Elastic Search Redis River
 
-Tested up to Elasticsearch 1.0.1
+Tested up to Elasticsearch 1.0.1 and 1.2.3
 
 This is a simple River that utilizes the same [Bulk API](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs-bulk.html) used 
 in Elastic Search REST requests and the RabbitMQ River, but
