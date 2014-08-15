@@ -271,7 +271,8 @@ public class RedisRiver extends AbstractRiverComponent implements River {
 				  jedis.select(redisDB);
 				}
 				if(logger.isDebugEnabled()) logger.debug("Blocking on queue pop...");
-				response = jedis.blpop(bulkTimeout, redisKey);
+				// FIFO -> LIFO
+				response = jedis.brpop(bulkTimeout, redisKey);
 			} catch (Exception e) {
 				// Can't get a redis object. Return and
 				// try again on the next loop.
