@@ -312,8 +312,8 @@ public class RedisRiver extends AbstractRiverComponent implements River {
 				try{
 					if(logger.isDebugEnabled()) logger.debug("Executing bulk request: actionCount={} bulkSize={} force={}", actionCount, bulkSize, force);
 					BulkResponse response = currentRequest.execute().actionGet();
-					if(response.hasFailures()){
-						logger.error("failed to execute" + response.buildFailureMessage());
+					if(response.hasFailures()) {
+						logger.error("Failed to execute Bulk Action : " + response.buildFailureMessage());
 					}
 				} catch(Exception e) {
 					logger.error("Failed to process bulk", e);
